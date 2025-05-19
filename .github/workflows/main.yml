@@ -1,0 +1,29 @@
+name: .NET Core Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'  # Change this if you're using a different version
+
+    - name: Restore NuGet packages
+      run: dotnet restore Group-12/YourProject.sln
+
+    - name: Build the solution
+      run: dotnet build Group-12/YourProject.sln --configuration Release
+
+    - name: Run tests (optional)
+      run: dotnet test Group-12/YourProject.sln
