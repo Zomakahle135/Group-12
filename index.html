@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Product Management</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .form-section,
+    .product-list {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-section h2,
+    .product-list h2 {
+      margin-bottom: 1.5rem;
+      color: #2563eb;
+      font-size: 1.25rem;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    form button {
+      padding: 0.75rem 1.5rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #1d4ed8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background-color: #eff6ff;
+      color: #1e3a8a;
+    }
+
+    td {
+      color: #374151;
+    }
+
+    @media (max-width: 768px) {
+      form input,
+      form select,
+      form textarea {
+        font-size: 0.95rem;
+      }
+
+      th, td {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Admin Dashboard</h1>
+    <p>Manage Products in Your Store</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Product Entry Form -->
+    <section class="form-section">
+      <h2>Add New Product</h2>
+      <form>
+        <label for="name">Product Name</label>
+        <input type="text" id="name" placeholder="Enter product name">
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="">-- Select Category --</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <option value="Furniture">Furniture</option>
+        </select>
+
+        <label for="price">Price (R)</label>
+        <input type="number" id="price" placeholder="e.g. 1299.00" step="0.01">
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" placeholder="e.g. 5">
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="4" placeholder="Enter product description..."></textarea>
+
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <!-- Product Table -->
+    <section class="product-list">
+      <h2>Existing Products</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price (R)</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Samsung Galaxy A32</td>
+            <td>Electronics</td>
+            <td>R3,999.00</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Men's Slim Fit Blazer</td>
+            <td>Clothing</td>
+            <td>R799.00</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Wooden Study Desk</td>
+            <td>Furniture</td>
+            <td>R1,850.00</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Cloud Computing Book</td>
+            <td>Books</td>
+            <td>R349.00</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>Wireless Headphones</td>
+            <td>Electronics</td>
+            <td>R1,299.00</td>
+            <td>15</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+</body>
+</html>
